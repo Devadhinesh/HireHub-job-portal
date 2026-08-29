@@ -1,0 +1,342 @@
+.certifications {
+  width: 100%;
+}
+
+/* =========================
+   ALERT MESSAGES
+========================= */
+
+.success-message,
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.success-message {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.certifications-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* =========================
+   FORM ROWS & GROUPS
+========================= */
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group label svg {
+  font-size: 14px;
+  color: #0a4d68;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #ffffff;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.form-group input:focus {
+  border-color: #0a4d68;
+  box-shadow: 0 0 0 3px rgba(10, 77, 104, 0.12);
+}
+
+/* =========================
+   ADD / CANCEL BUTTONS
+========================= */
+
+.add-certification-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border: 1.5px dashed #0a4d68;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #0a4d68;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.add-certification-btn:hover {
+  background: #e6f4f9;
+}
+
+.cancel-certification-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  margin-left: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cancel-certification-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #9ca3af;
+}
+
+/* =========================
+   CERTIFICATIONS LIST
+========================= */
+
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.no-certifications {
+  text-align: center;
+  padding: 32px 16px;
+  color: #9ca3af;
+  font-size: 13.5px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.certification-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.certification-card:hover {
+  border-color: #0a4d68;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.certification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #e6f4f9;
+  color: #0a4d68;
+  font-size: 18px;
+}
+
+.certification-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.certification-content h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.certification-content h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0a4d68;
+  margin: 0 0 4px;
+}
+
+.certification-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.meta-item svg {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.credential-link {
+  color: #0a4d68;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.credential-link svg {
+  color: #0a4d68;
+}
+
+.credential-link:hover {
+  text-decoration: underline;
+}
+
+.delete-certification-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #ef4444;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.delete-certification-btn:hover {
+  background: #fee2e2;
+}
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+
+.form-actions:last-of-type {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+}
+
+.save-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 7px;
+  background: #0a4d68;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.save-profile-btn:hover {
+  background: #08394d;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certification-card {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .certification-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .add-certification-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cancel-certification-btn {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .save-profile-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

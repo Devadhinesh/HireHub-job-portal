@@ -1,0 +1,289 @@
+.recruiter-edit-interview-page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 75px;
+  padding: 0 20px 60px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.edit-interview-loading {
+  padding: 90px 20px;
+  text-align: center;
+  font-size: 13.5px;
+  color: #6b7280;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.06);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.edit-interview-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: 1.5px solid #ede9fe;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4f46e5;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  width: fit-content;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.edit-interview-back-btn:hover {
+  background: #f4f2ff;
+  border-color: #ddd6fe;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.edit-interview-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e1b4b;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.edit-interview-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 6px 0 0;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.edit-interview-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.edit-interview-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-interview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 26px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.06);
+}
+
+.edit-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f1f0fe;
+}
+
+.edit-card-title svg {
+  font-size: 17px;
+  color: #7c3aed;
+}
+
+.edit-card-title h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin: 0;
+}
+
+/* =========================
+   FORM ROWS & GROUPS
+========================= */
+
+.edit-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.edit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.edit-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+.edit-form-group label svg {
+  font-size: 14px;
+  color: #7c3aed;
+}
+
+.edit-form-group input,
+.edit-form-group select,
+.edit-form-group textarea {
+  padding: 11px 13px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: #1e1b4b;
+  border: 1.5px solid #f1f0fe;
+  border-radius: 10px;
+  background: #fafaff;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.edit-form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.edit-form-group input::placeholder,
+.edit-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+  border-color: #a78bfa;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.edit-form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%237c3aed'><path fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.24 4.65a.75.75 0 01-1.08 0l-4.24-4.65a.75.75 0 01.02-1.06z' clip-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 34px;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.edit-interview-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.edit-interview-cancel-btn {
+  padding: 12px 22px;
+  border: 1.5px solid #ede9fe;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.edit-interview-cancel-btn:hover {
+  background: #f4f2ff;
+  border-color: #ddd6fe;
+}
+
+.edit-interview-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.edit-interview-save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.4);
+}
+
+.edit-interview-cancel-btn:disabled,
+.edit-interview-save-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .recruiter-edit-interview-page {
+    padding: 0 14px 40px;
+  }
+
+  .edit-interview-card {
+    padding: 20px;
+  }
+
+  .edit-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-interview-header h1 {
+    font-size: 21px;
+  }
+
+  .edit-interview-actions {
+    flex-direction: column-reverse;
+  }
+
+  .edit-interview-cancel-btn,
+  .edit-interview-save-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

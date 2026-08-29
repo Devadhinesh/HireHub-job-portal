@@ -1,0 +1,71 @@
+/* ==============================
+   RECRUITER LAYOUT
+============================== */
+
+.recruiter-layout {
+  min-height: calc(100vh - 70px);
+  background: #f5f7fb;
+}
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.recruiter-main-content {
+  min-width: 0;
+  min-height: calc(100vh - 70px);
+
+  padding: 24px;
+
+  transition: margin-left 0.3s ease;
+}
+
+/* ==============================
+   SIDEBAR COLLAPSED
+============================== */
+
+.recruiter-layout.sidebar-collapsed
+  .recruiter-main-content {
+  margin-left: 72px;
+}
+
+/* ==============================
+   SIDEBAR OPEN
+============================== */
+
+.recruiter-layout.sidebar-open
+  .recruiter-main-content {
+  margin-left: 250px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  .recruiter-layout.sidebar-collapsed
+    .recruiter-main-content {
+    margin-left: 64px;
+  }
+
+  .recruiter-layout.sidebar-open
+    .recruiter-main-content {
+    margin-left: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruiter-main-content {
+    padding: 16px;
+  }
+
+  .recruiter-layout.sidebar-collapsed
+    .recruiter-main-content {
+    margin-left: 64px;
+  }
+
+  .recruiter-layout.sidebar-open
+    .recruiter-main-content {
+    margin-left: 220px;
+  }
+}

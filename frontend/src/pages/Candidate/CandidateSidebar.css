@@ -1,0 +1,219 @@
+.candidate-sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  width: 76px;
+  background: #1e1b4b;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, width 0.3s ease;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.12);
+}
+
+.candidate-sidebar.sidebar-open {
+  transform: translateX(0);
+}
+
+.candidate-sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 5px 8px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.candidate-sidebar-top h2 {
+  display: none;
+}
+
+.sidebar-close-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sidebar-close-btn:hover {
+  background: #e2e8f0;
+  color: #145b73;
+}
+
+.candidate-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.candidate-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.candidate-menu-item:hover {
+  background: #e8f3f7;
+  color: #145b73;
+}
+
+.candidate-menu-item.active {
+  background: #e3f1f6;
+  color: #145b73;
+  font-weight: 600;
+}
+
+/* keep the left accent bar, just centered on the icon rail */
+.candidate-menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: #145b73;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  min-width: 20px;
+}
+
+/* hide label by default -- icon only */
+.menu-label {
+  display: none;
+  white-space: nowrap;
+}
+
+/* show label as a tooltip on hover / touch */
+.candidate-menu-item:hover .menu-label,
+.candidate-menu-item:focus .menu-label,
+.candidate-menu-item:active .menu-label {
+  display: block;
+  position: absolute;
+  left: 62px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: #145b73;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.candidate-menu-item:hover .menu-label::before,
+.candidate-menu-item:focus .menu-label::before,
+.candidate-menu-item:active .menu-label::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #145b73;
+  rotate: 45deg;
+}
+
+.candidate-sidebar-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+}
+
+.candidate-logout-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #dc2626;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.candidate-logout-btn:hover {
+  background: #fef2f2;
+}
+
+.candidate-logout-btn span {
+  display: none;
+}
+
+.candidate-logout-btn:hover span,
+.candidate-logout-btn:focus span {
+  display: block;
+  position: absolute;
+  left: 62px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.candidate-sidebar-overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+@media (max-width: 767px) {
+  .candidate-sidebar {
+    width: 68px;
+  }
+}
+
+@media (max-width: 480px) {
+  .candidate-sidebar {
+    width: 64px;
+  }
+}

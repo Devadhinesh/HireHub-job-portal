@@ -1,0 +1,396 @@
+.home-page {
+  min-height: calc(100vh - 73px);
+  background: #ffffff;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #eff6ff;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 58px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hero-text {
+  display: block;
+  max-width: 600px;
+  margin: 20px auto 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn,
+.cta-btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.primary-btn {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  color: #2563eb;
+  background: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.secondary-btn:hover {
+  background: #eff6ff;
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features-section {
+  padding: 70px 20px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  margin: 0 0 10px;
+  color: #1e293b;
+  font-size: 32px;
+}
+
+.section-heading span {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.features-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 26px;
+}
+
+.feature-card h3 {
+  margin: 0 0 10px;
+  color: #1e293b;
+  font-size: 19px;
+}
+
+.feature-card span {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section {
+  padding: 70px 20px;
+  text-align: center;
+  background: #1e293b;
+}
+
+.cta-section h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.cta-section span {
+  display: block;
+  margin-bottom: 25px;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.cta-btn {
+  display: inline-block;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.cta-btn:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   RESPONSIVE
+   Breakpoints:
+   - Large desktop:  > 1440px
+   - Desktop:         1200px - 1440px  (default styles above)
+   - Laptop:           992px - 1199px
+   - Tablet:           768px - 991px
+   - Mobile (large):   500px - 767px
+   - Mobile (small):   < 500px
+   - Mobile (tiny):    < 360px
+========================= */
+
+/* ---- Large desktop: give the layout more breathing room ---- */
+@media (min-width: 1441px) {
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .hero-content h1 {
+    font-size: 64px;
+  }
+
+  .hero-text {
+    max-width: 660px;
+    font-size: 18px;
+  }
+
+  .features-container {
+    max-width: 1240px;
+    gap: 30px;
+  }
+
+  .section-heading h2 {
+    font-size: 36px;
+  }
+}
+
+/* ---- Laptop: slightly tighter than default desktop ---- */
+@media (max-width: 1199px) {
+  .hero-content h1 {
+    font-size: 50px;
+  }
+
+  .features-container {
+    max-width: 960px;
+    gap: 20px;
+  }
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: 460px;
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 44px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .features-section {
+    padding: 56px 20px;
+  }
+
+  .features-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
+    gap: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .cta-section {
+    padding: 56px 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+}
+
+/* ---- Mobile (large phones / small tablets) ---- */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 420px;
+    padding: 44px 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+    margin-top: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 280px;
+    margin: 26px auto 0;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .features-section {
+    padding: 48px 18px;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 26px 22px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2,
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section {
+    padding: 48px 18px;
+  }
+}
+
+/* ---- Mobile (small phones) ---- */
+@media (max-width: 500px) {
+  .hero-section {
+    min-height: 400px;
+    padding: 36px 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-tag {
+    font-size: 13px;
+  }
+
+  .hero-text {
+    font-size: 14.5px;
+  }
+
+  .hero-buttons {
+    max-width: 250px;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .cta-btn {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  .feature-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+
+  .feature-card h3 {
+    font-size: 17px;
+  }
+
+  .feature-card span {
+    font-size: 13.5px;
+  }
+}
+
+/* ---- Mobile (tiny phones, e.g. 320px devices) ---- */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-text {
+    font-size: 13.5px;
+  }
+
+  .section-heading h2,
+  .cta-section h2 {
+    font-size: 21px;
+  }
+
+  .feature-card {
+    padding: 20px 16px;
+  }
+}

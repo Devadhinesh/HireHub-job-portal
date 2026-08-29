@@ -1,0 +1,718 @@
+/* =========================
+   PAGE — FULL HEIGHT
+   Fills the viewport below the fixed 75px header margin so
+   loading/empty states center properly and short lists don't
+   leave a big empty gap at the bottom of the screen.
+========================= */
+
+html, body, #root {
+  height: 100%;
+}
+
+.recruiter-applications-page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 1180px;
+  margin: 0 auto;
+  margin-top: 75px;
+  padding: 0 20px 60px;
+  min-height: calc(100vh - 75px);
+  box-sizing: border-box;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.recruiter-applications-loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 90px 20px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.06);
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #ede9fe;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: recruiter-app-spin 0.8s linear infinite;
+}
+
+@keyframes recruiter-app-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.recruiter-applications-loading p {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.recruiter-applications-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.recruiter-applications-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e1b4b;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.recruiter-applications-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0 0;
+}
+
+.applications-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.06);
+  white-space: nowrap;
+}
+
+.applications-count svg {
+  font-size: 15px;
+  color: #7c3aed;
+}
+
+.applications-count span {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.applications-count small {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.applications-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.applications-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.06);
+}
+
+.applications-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.applications-empty h2 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin: 0 0 6px;
+}
+
+.applications-empty p {
+  font-size: 13px;
+  color: #6b7280;
+  max-width: 360px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================
+   APPLICATIONS LIST / CARD
+========================= */
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.application-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.application-card:hover {
+  box-shadow: 0 8px 22px rgba(30, 27, 75, 0.1);
+  transform: translateY(-2px);
+}
+
+/* CANDIDATE */
+
+.application-candidate {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.candidate-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.candidate-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.application-candidate h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin: 0;
+}
+
+.application-candidate p {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 2px 0 0;
+}
+
+/* JOB */
+
+.application-job {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.application-job > svg {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #a78bfa;
+}
+
+.application-job strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+.application-job span {
+  font-size: 12px;
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+/* STATUS */
+
+.application-status {
+  display: flex;
+}
+
+.application-status-badge {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-applied {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.status-review {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status-shortlisted {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.status-interview {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-hired {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.status-rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ACTIONS */
+
+.application-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.application-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.application-view-btn {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f4f2ff;
+  color: #7c3aed;
+  font-size: 15px;
+}
+
+.application-view-btn:hover {
+  background: #ede9fe;
+}
+
+.application-shortlist-btn {
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 12px;
+}
+
+.application-shortlist-btn:hover {
+  background: #ddd6fe;
+}
+
+.application-interview-btn {
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.application-interview-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.38);
+}
+
+.application-reject-btn {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #ef4444;
+  font-size: 15px;
+}
+
+.application-reject-btn:hover {
+  background: #fee2e2;
+}
+
+.application-actions button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* HIRED / REJECTED TEXT (no interview/reject buttons shown) */
+
+.application-hired-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: #d1fae5;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.application-rejected-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =========================
+   INTERVIEW MODAL
+========================= */
+
+.interview-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 27, 75, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+}
+
+.interview-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(30, 27, 75, 0.3);
+}
+
+.interview-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f1f0fe;
+}
+
+.interview-modal-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin: 0;
+}
+
+.interview-modal-header p {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 4px 0 0;
+}
+
+.interview-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.15s ease;
+}
+
+.interview-modal-close:hover {
+  background: #e5e7eb;
+}
+
+/* SELECTED CANDIDATE */
+
+.selected-candidate {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #fafaff;
+  border-radius: 12px;
+}
+
+.selected-candidate strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+.selected-candidate span {
+  font-size: 12px;
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+/* MODAL FORM ERROR */
+
+.interview-form-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* MODAL FORM */
+
+.interview-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.interview-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.interview-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.interview-form-group label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+.interview-form-group input,
+.interview-form-group select,
+.interview-form-group textarea {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1e1b4b;
+  border: 1.5px solid #f1f0fe;
+  border-radius: 10px;
+  background: #fafaff;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.interview-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+.interview-form-group input::placeholder,
+.interview-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.interview-form-group input:focus,
+.interview-form-group select:focus,
+.interview-form-group textarea:focus {
+  border-color: #a78bfa;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.interview-form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%237c3aed'><path fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.24 4.65a.75.75 0 01-1.08 0l-4.24-4.65a.75.75 0 01.02-1.06z' clip-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+  padding-right: 32px;
+}
+
+/* MODAL ACTIONS */
+
+.interview-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.interview-cancel-btn {
+  padding: 11px 20px;
+  border: 1.5px solid #f1f0fe;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.interview-cancel-btn:hover {
+  background: #f4f2ff;
+  border-color: #ddd6fe;
+}
+
+.interview-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.interview-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.38);
+}
+
+.interview-cancel-btn:disabled,
+.interview-submit-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+  .application-card {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 14px;
+  }
+
+  .application-status {
+    order: 3;
+  }
+
+  .application-actions {
+    order: 4;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .recruiter-applications-page {
+    padding: 0 14px 40px;
+  }
+
+  .application-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .application-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .recruiter-applications-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .interview-modal {
+    padding: 22px;
+  }
+
+  .interview-form-row {
+    grid-template-columns: 1fr;
+  }
+}

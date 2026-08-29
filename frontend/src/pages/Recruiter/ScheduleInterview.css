@@ -1,0 +1,365 @@
+/* ============================================
+   ScheduleInterview.css
+   Styles for the Schedule Interview page
+   ============================================ */
+
+.schedule-interview-page {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 75px;
+  padding: 24px 20px 60px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #1f2937;
+}
+
+/* ---------- Header ---------- */
+.schedule-interview-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.schedule-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.schedule-back-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.schedule-back-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.schedule-interview-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #111827;
+}
+
+.schedule-interview-header p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ---------- Card ---------- */
+.schedule-interview-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* ---------- Candidate Info ---------- */
+.candidate-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.candidate-avatar {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.candidate-info h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: #111827;
+}
+
+.candidate-info p {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0 0 6px;
+}
+
+.candidate-info span {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 12.5px;
+  font-weight: 500;
+  border-radius: 999px;
+}
+
+/* ---------- Error Banner ---------- */
+.schedule-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Card Header (icon + title) ---------- */
+.schedule-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.schedule-card-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #111827;
+}
+
+.schedule-card-header p {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.schedule-card-header svg {
+  font-size: 20px;
+  color: #6366f1;
+}
+
+/* ---------- Form Grid ---------- */
+.schedule-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 20px;
+}
+
+.schedule-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.schedule-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.schedule-form-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.schedule-form-group select,
+.schedule-form-group input[type="date"],
+.schedule-form-group input[type="time"] {
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.schedule-form-group select:focus,
+.schedule-form-group input:focus,
+.schedule-form-group textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.schedule-form-group select:disabled,
+.schedule-form-group input:disabled,
+.schedule-form-group textarea:disabled {
+  background: #f9fafb;
+  cursor: not-allowed;
+}
+
+/* Inputs with a leading icon */
+.schedule-input-icon,
+.schedule-textarea-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.schedule-input-icon:focus-within,
+.schedule-textarea-icon:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.schedule-input-icon svg,
+.schedule-textarea-icon svg {
+  color: #9ca3af;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.schedule-textarea-icon svg {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+.schedule-input-icon input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  background: transparent;
+  color: #1f2937;
+}
+
+.schedule-textarea-icon textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  background: transparent;
+  color: #1f2937;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* ---------- Form Actions ---------- */
+.schedule-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.schedule-cancel-btn {
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.schedule-cancel-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.schedule-save-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.schedule-save-btn:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.schedule-save-btn:disabled,
+.schedule-cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Application Not Found ---------- */
+.schedule-interview-error {
+  max-width: 480px;
+  margin: 80px auto 0;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 40px 28px;
+}
+
+.schedule-interview-error h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.schedule-interview-error p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 20px;
+}
+
+.schedule-interview-error button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.schedule-interview-error button:hover {
+  background: #4338ca;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .schedule-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-interview-header {
+    flex-wrap: wrap;
+  }
+
+  .schedule-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .schedule-save-btn,
+  .schedule-cancel-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* =========================================================
+   HIREHUB — PREMIUM CANDIDATE PROFILE
+========================================================= */
+
+.candidate-profile-page {
+  --primary: #845EC2;
+  --primary-dark: #6d3fb0;
+  --secondary: #A66DE0;
+
+  --heading: #101828;
+  --body: #475467;
+  --muted: #98a2b3;
+
+  --surface: #ffffff;
+  --surface-soft: #f8f4fc;
+  --border: #eaecf0;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  max-width: 1180px;
+  margin: 24px auto;
+  padding: 0 20px 60px;
+
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--heading);
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.profile-sidebar {
+  position: sticky;
+  top: 88px;
+
+  width: 268px;
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow: 0 9px 30px rgba(16, 24, 40, 0.055);
+}
+
+.sidebar-title {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 22px 22px;
+
+  overflow: hidden;
+
+  background: linear-gradient(120deg, #2d1b4e 0%, #4a2f8c 48%, #6d3fb0 100%);
+
+  color: #ffffff;
+}
+
+.sidebar-title::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: -60px;
+  top: -90px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.sidebar-title svg {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 8px;
+  box-sizing: border-box;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  font-size: 16px;
+}
+
+.sidebar-title h2 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.profile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  padding: 12px;
+}
+
+.profile-menu-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 11px 14px;
+
+  overflow: hidden;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--body);
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.profile-menu-item svg {
+  flex-shrink: 0;
+
+  font-size: 16px;
+  color: var(--muted);
+
+  transition: color 0.18s ease;
+}
+
+.profile-menu-item:hover {
+  background: var(--surface-soft);
+  color: #101828;
+  transform: translateX(3px);
+}
+
+.profile-menu-item:hover svg {
+  color: var(--primary);
+}
+
+.profile-menu-item.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(132, 94, 194, 0.28);
+}
+
+.profile-menu-item.active svg {
+  color: #ffffff;
+}
+
+/* left accent bar on active item */
+
+.profile-menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 3px;
+  border-radius: 3px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.profile-content {
+  flex: 1;
+  min-width: 0;
+
+  padding: 30px 34px;
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  background: linear-gradient(145deg, #ffffff, #fcfdff);
+
+  box-shadow: 0 9px 30px rgba(16, 24, 40, 0.055);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .candidate-profile-page {
+    flex-direction: column;
+  }
+
+  .profile-sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+
+    border-radius: 20px;
+  }
+
+  .profile-menu {
+    flex-direction: row;
+    gap: 6px;
+
+    padding: 10px;
+
+    overflow-x: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .profile-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .profile-menu-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 9px 14px;
+  }
+
+  .profile-menu-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .profile-menu-item.active::before {
+    left: 8px;
+    right: 8px;
+    top: auto;
+    bottom: -2px;
+
+    width: auto;
+    height: 3px;
+  }
+
+  .profile-content {
+    padding: 22px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .candidate-profile-page {
+    margin: 12px auto;
+    padding: 0 12px 40px;
+    gap: 16px;
+  }
+
+  .sidebar-title {
+    padding: 18px;
+  }
+
+  .sidebar-title h2 {
+    font-size: 14.5px;
+  }
+
+  .profile-menu-item span {
+    font-size: 12.5px;
+  }
+
+  .profile-content {
+    padding: 18px;
+  }
+}
