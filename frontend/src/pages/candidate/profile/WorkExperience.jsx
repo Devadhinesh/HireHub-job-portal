@@ -4,8 +4,8 @@ import { FiPlus, FiTrash2, FiSave, FiBriefcase, FiUser, FiMapPin, FiSettings, Fi
 import { useAuth } from "../../../components/context/AuthContext";
 import "./WorkExperience.css";
 
-const API_URL = "http://localhost:5000/api/candidates/profile";
-
+const API_URL =
+  `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/candidates/profile`;
 const initialFormData = {
   companyName: "", jobTitle: "", location: "", startDate: "",
   endDate: "", currentlyWorking: false, description: "", employmentType: "",

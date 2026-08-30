@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 import { useAuth } from "../../components/context/AuthContext";
 import "./RecruiterEditInterview.css";
 
-const API_URL = "http://localhost:5000/api/interviews";
+const API_URL =
+  `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/interviews`;
 
 const RecruiterEditInterview = () => {
   const { interviewId } = useParams();

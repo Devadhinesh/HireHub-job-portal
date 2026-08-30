@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./NotificationBell.css";
 
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 const NOTIFICATION_API = `${SERVER_URL}/api/notifications`;
 
 const NotificationBell = () => {

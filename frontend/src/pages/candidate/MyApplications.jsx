@@ -7,11 +7,13 @@ import {
 import { useAuth } from "../../components/context/AuthContext";
 import "./MyApplications.css";
 
-const API_URL = "http://localhost:5000/api/applications/my";
-const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile/public";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-const SERVER_URL = "http://localhost:5000";
+const API_URL = `${SERVER_URL}/api/applications/my`;
+
+const RECRUITER_PROFILE_API =
+  `${SERVER_URL}/api/recruiter-profile/public`;
 
 const MyApplications = () => {
   const { token } = useAuth();

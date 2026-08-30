@@ -6,7 +6,8 @@ import { useAuth } from "../../components/context/AuthContext";
 import Swal from "sweetalert2";
 import "./RecruiterPostJob.css";
 
-const API_URL = "http://localhost:5000/api/jobs";
+const API_URL =
+  `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/jobs`;
 
 const RecruiterPostJob = () => {
   const navigate = useNavigate();

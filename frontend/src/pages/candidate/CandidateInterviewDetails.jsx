@@ -14,10 +14,13 @@ import {
 import { useAuth } from "../../components/context/AuthContext";
 import "./CandidateInterviewDetails.css";
 
-const API_URL = "http://localhost:5000/api/interviews";
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${SERVER_URL}/api/interviews`;
+
 const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile";
+  `${SERVER_URL}/api/recruiter-profile`;
 
 const CandidateInterviewDetails = () => {
   const { interviewId } = useParams();

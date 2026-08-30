@@ -14,8 +14,10 @@ import {
 import { useAuth } from "../../../components/context/AuthContext";
 import "./BasicInformation.css";
 
-const API_URL = "http://localhost:5000/api/candidates/profile";
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${SERVER_URL}/api/candidates/profile`;
 
 const BasicInformation = () => {
   const { token } = useAuth();

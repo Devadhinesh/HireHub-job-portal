@@ -8,12 +8,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./RecruiterApplicationDetails.css";
 
-const API_URL = "http://localhost:5000/api/applications";
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${SERVER_URL}/api/applications`;
 const CANDIDATE_PROFILE_API =
-  "http://localhost:5000/api/candidates/profile";
+  `${SERVER_URL}/api/candidates/profile`;
 const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile";
+  `${SERVER_URL}/api/recruiter-profile`;
 
 const RecruiterApplicationDetails = () => {
   const navigate = useNavigate();

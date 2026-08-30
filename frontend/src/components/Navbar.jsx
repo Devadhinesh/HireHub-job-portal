@@ -6,11 +6,13 @@ import { io } from "socket.io-client";
 import { useAuth } from "./context/AuthContext";
 import "./Navbar.css";
 
-const CANDIDATE_API_URL = "http://localhost:5000/api/candidates/profile";
-const RECRUITER_API_URL = "http://localhost:5000/api/recruiter-profile";
-const NOTIFICATION_API_URL = "http://localhost:5000/api/notifications";
-const SERVER_URL = "http://localhost:5000";
-const SOCKET_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const CANDIDATE_API_URL = `${SERVER_URL}/api/candidates/profile`;
+const RECRUITER_API_URL = `${SERVER_URL}/api/recruiter-profile`;
+const NOTIFICATION_API_URL = `${SERVER_URL}/api/notifications`;
+const SOCKET_URL = SERVER_URL;
 
 const Navbar = () => {
   const navigate = useNavigate();

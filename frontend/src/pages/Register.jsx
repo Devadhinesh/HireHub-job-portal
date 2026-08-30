@@ -26,7 +26,13 @@ const Register = () => {
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const API_URL =
+        import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+      const response = await axios.post(
+        `${API_URL}/api/auth/register`,
+        formData
+      );
       await Swal.fire({ title: "Registration Successful!", text: `Welcome to HireHub, ${formData.name}!`, icon: "success", confirmButtonText: "Go to Login" });
       navigate("/login");
     } catch (error) {

@@ -6,10 +6,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./ScheduleInterview.css";
 
-const API_URL = "http://localhost:5000/api/interviews";
-const SERVER_URL = "http://localhost:5000";
-const CANDIDATE_PROFILE_API = "http://localhost:5000/api/candidates/profile";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
+const API_URL = `${SERVER_URL}/api/interviews`;
+const CANDIDATE_PROFILE_API =
+  `${SERVER_URL}/api/candidates/profile`;
+  
 const ScheduleInterview = () => {
   const navigate = useNavigate();
   const location = useLocation();

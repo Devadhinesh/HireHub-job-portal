@@ -5,7 +5,8 @@ import { FiMessageSquare, FiSend, FiSearch, FiTrash2, FiCheck, FiCheckCircle, Fi
 import { useAuth } from "../../components/context/AuthContext";
 import "./CandidateMessages.css";
 
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 const MESSAGE_API = `${SERVER_URL}/api/messages`;
 const PROFILE_API = `${SERVER_URL}/api/candidates/profile`;
 const RECRUITER_PROFILE_API = `${SERVER_URL}/api/recruiter-profile`;

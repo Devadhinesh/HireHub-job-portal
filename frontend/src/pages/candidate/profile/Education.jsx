@@ -13,7 +13,8 @@ import {
 import { useAuth } from "../../../components/context/AuthContext";
 import "./Education.css";
 
-const API_URL = "http://localhost:5000/api/candidates/profile";
+const API_URL =
+  `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/candidates/profile`;
 
 const Education = () => {
   const { token } = useAuth();

@@ -4,8 +4,8 @@ import { FiSave, FiFileText, FiBriefcase, FiClock, FiCalendar, FiDollarSign, FiS
 import { useAuth } from "../../../components/context/AuthContext";
 import "./ProfessionalSummary.css";
 
-const API_URL = "http://localhost:5000/api/candidates/profile";
-
+const API_URL =
+  `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/candidates/profile`;
 const ProfessionalSummary = () => {
   const { token } = useAuth();
 

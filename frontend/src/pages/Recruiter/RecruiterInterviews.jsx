@@ -8,11 +8,16 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./RecruiterInterviews.css";
 
-const API_URL = "http://localhost:5000/api/interviews";
-const SERVER_URL = "http://localhost:5000";
-const CANDIDATE_PROFILE_API = "http://localhost:5000/api/candidates/profile";
-const RECRUITER_PROFILE_API = "http://localhost:5000/api/recruiter-profile";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
+const API_URL = `${SERVER_URL}/api/interviews`;
+const CANDIDATE_PROFILE_API =
+  `${SERVER_URL}/api/candidates/profile`;
+const RECRUITER_PROFILE_API =
+  `${SERVER_URL}/api/recruiter-profile`;
+
+  
 const RecruiterInterviews = () => {
   const navigate = useNavigate();
   const { token } = useAuth();

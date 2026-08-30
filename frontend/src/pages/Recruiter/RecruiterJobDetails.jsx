@@ -17,9 +17,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./RecruiterJobDetails.css";
 
-const API_URL = "http://localhost:5000/api/jobs";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${SERVER_URL}/api/jobs`;
 const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile";
+  `${SERVER_URL}/api/recruiter-profile`;
 
 const RecruiterJobDetails = () => {
   const navigate = useNavigate();
@@ -156,18 +159,17 @@ const RecruiterJobDetails = () => {
   }
 
   const getPhotoUrl = (photo) => {
-    if (!photo) return null;
+  if (!photo) return null;
 
-    if (
-      photo.startsWith("http://") ||
-      photo.startsWith("https://")
-    ) {
-      return photo;
-    }
+  if (
+    photo.startsWith("http://") ||
+    photo.startsWith("https://")
+  ) {
+    return photo;
+  }
 
-    return `http://localhost:5000${photo.startsWith("/") ? photo : `/${photo}`
-      }`;
-  };
+  return `${SERVER_URL}${photo.startsWith("/") ? photo : `/${photo}`}`;
+};
 
   return (
     <div className="rjd-page">

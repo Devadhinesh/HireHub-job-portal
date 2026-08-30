@@ -10,11 +10,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./CandidateApplyJob.css";
 
-const JOB_API = "http://localhost:5000/api/jobs";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const JOB_API = `${SERVER_URL}/api/jobs`;
 const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile";
-const PROFILE_API = "http://localhost:5000/api/candidates/profile";
-const APPLICATION_API = "http://localhost:5000/api/applications";
+  `${SERVER_URL}/api/recruiter-profile`;
+const PROFILE_API = `${SERVER_URL}/api/candidates/profile`;
+const APPLICATION_API = `${SERVER_URL}/api/applications`;
 
 const CandidateApplyJob = () => {
   const navigate = useNavigate();
@@ -219,8 +222,7 @@ const CandidateApplyJob = () => {
       return image;
     }
 
-    return `http://localhost:5000${image.startsWith("/") ? image : `/${image}`
-      }`;
+    return `${SERVER_URL}${image.startsWith("/") ? image : `/${image}`}`;
   };
 
   return (

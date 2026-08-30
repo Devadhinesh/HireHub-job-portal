@@ -5,12 +5,13 @@ import { FiCalendar, FiClock, FiBriefcase, FiVideo, FiMapPin, FiEye, FiSearch, F
 import { useAuth } from "../../components/context/AuthContext";
 import "./CandidateInterviews.css";
 
-const API_URL = "http://localhost:5000/api/interviews";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${SERVER_URL}/api/interviews`;
 
 const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile/public";
-
-const SERVER_URL = "http://localhost:5000";
+  `${SERVER_URL}/api/recruiter-profile/public`;
 
 const CandidateInterviews = () => {
   const navigate = useNavigate();

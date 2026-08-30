@@ -17,7 +17,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./CandidateSearchJobs.css";
 
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 const JOB_API = `${SERVER_URL}/api/jobs`;
 const SAVED_JOB_API = `${SERVER_URL}/api/saved-jobs`;
 const RECRUITER_PROFILE_API =

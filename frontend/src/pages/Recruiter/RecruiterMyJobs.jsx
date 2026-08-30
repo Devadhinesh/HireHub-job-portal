@@ -17,11 +17,13 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../components/context/AuthContext";
 import "./RecruiterMyJobs.css";
 
-const API_URL = "http://localhost:5000/api/jobs/recruiter";
-const JOB_API = "http://localhost:5000/api/jobs";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${SERVER_URL}/api/jobs/recruiter`;
+const JOB_API = `${SERVER_URL}/api/jobs`;
 const RECRUITER_PROFILE_API =
-  "http://localhost:5000/api/recruiter-profile";
-const SERVER_URL = "http://localhost:5000";
+  `${SERVER_URL}/api/recruiter-profile`;
 
 const RecruiterMyJobs = () => {
   const navigate = useNavigate();

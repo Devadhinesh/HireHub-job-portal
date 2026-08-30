@@ -6,8 +6,11 @@ import Swal from "sweetalert2";
 import { useAuth } from "../../components/context/AuthContext";
 import "./RecruiterApplications.css";
 
-const APPLICATION_API = "http://localhost:5000/api/applications";
-const INTERVIEW_API = "http://localhost:5000/api/interviews";
+const SERVER_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const APPLICATION_API = `${SERVER_URL}/api/applications`;
+const INTERVIEW_API = `${SERVER_URL}/api/interviews`;
 
 const RecruiterApplications = () => {
   const navigate = useNavigate();
@@ -177,8 +180,7 @@ const RecruiterApplications = () => {
       return photo;
     }
 
-    return `http://localhost:5000${photo.startsWith("/") ? photo : `/${photo}`
-      }`;
+    return `${SERVER_URL}${photo.startsWith("/") ? photo : `/${photo}`}`;
   };
   // UI
   return (
