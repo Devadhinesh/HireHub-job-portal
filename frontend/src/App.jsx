@@ -6,16 +6,16 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
-import CandidateLayout from "./pages/Candidate/CandidateLayout";
-import CandidateDashboard from "./pages/Candidate/CandidateDashboard";
-import SearchJobs from "./pages/Candidate/SearchJobs";
+import CandidateLayout from "./pages/candidate/CandidateLayout";
+import CandidateDashboard from "./pages/candidate/CandidateDashboard";
+import SearchJobs from "./pages/candidate/SearchJobs";
 import SavedJobs from "./pages/candidate/SavedJobs";
 import MyApplications from "./pages/candidate/MyApplications";
 import CandidateInterviews from "./pages/candidate/CandidateInterviews";
 import CandidateInterviewDetails from "./pages/candidate/CandidateInterviewDetails";
-import CandidateMessages from "./pages/Candidate/CandidateMessages";
+import CandidateMessages from "./pages/candidate/CandidateMessages";
 import CandidateProfile from "./pages/candidate/CandidateProfile";
-import CandidateApplyJob from "./pages/Candidate/CandidateApplyJob";
+import CandidateApplyJob from "./pages/candidate/CandidateApplyJob";
 
 import RecruiterLayout from "./pages/Recruiter/RecruiterLayout";
 import RecruiterDashboard from "./pages/Recruiter/RecruiterDashboard";
